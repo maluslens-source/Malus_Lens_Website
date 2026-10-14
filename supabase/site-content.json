@@ -1,0 +1,129 @@
+{
+  "text": {},
+  "config": {
+    "metrics": [
+      {
+        "key": "grading",
+        "label": "Grading accuracy",
+        "value": 94,
+        "suffix": "%",
+        "description": "Grade A / B classification"
+      },
+      {
+        "key": "detection",
+        "label": "Detection accuracy",
+        "value": 99,
+        "suffix": "%",
+        "description": "Apples found in each image"
+      },
+      {
+        "key": "time",
+        "label": "Processing time",
+        "value": 10,
+        "suffix": "s",
+        "description": "Per crate"
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "Asif Jehangir Reshi",
+        "role": "",
+        "photo": "",
+        "quote": "Maintaining consistent quality checks across incoming lots can be challenging when operations get busy. Malus Lens offers a simpler, more structured way to assess apple quality, helping our team make the checking process easier to manage, lot after lot.",
+        "organisation": "Shaheen Agro Pvt. Ltd."
+      },
+      {
+        "name": "Nadeem Parra",
+        "role": "",
+        "photo": "",
+        "quote": "During peak apple season, every minute matters. Malus Lens has made our quality checks much faster and easier to manage. We can assess sampled apples more efficiently without making quality control another bottleneck during intake.",
+        "organisation": "Orchard Fresh Cold Chain Pvt. Ltd."
+      },
+      {
+        "name": "Mohsin Mir",
+        "role": "",
+        "photo": "",
+        "quote": "It is built for how Kashmirâ€™s cold stores actually work: one photo per crate, straight from a phone. Our floor staff picked it up quickly, and we now have consistent quality data for every lot we receive.",
+        "organisation": "Fruitmont Pvt. Ltd."
+      }
+    ]
+  },
+  "images": {
+    "problem.img3": {
+      "src": "https://hqatexqeufohkisimqvq.supabase.co/storage/v1/object/public/ml-site/uploads/1791894962666-4de6fd34.jpg"
+    }
+  },
+  "content": {
+    "why": [
+      {
+        "text": "Designed specifically around apple quality assessment rather than generic image recognition.",
+        "title": "Built for apple quality assessment"
+      },
+      {
+        "text": "Made for operational environments where speed and simplicity matter.",
+        "title": "Designed for cold-storage operations"
+      },
+      {
+        "text": "The experience is designed to minimise unnecessary complexity on the floor.",
+        "title": "Simple for workers"
+      },
+      {
+        "text": "Measurable results rather than relying entirely on subjective visual assessment.",
+        "title": "Data instead of guesswork"
+      }
+    ],
+    "benefits": [
+      {
+        "key": "fast",
+        "text": "Designed to help teams assess apple quality quickly when time matters most.",
+        "title": "Fast"
+      },
+      {
+        "key": "precise",
+        "text": "AI-powered computer vision provides a consistent approach to quality assessment.",
+        "title": "Precise"
+      },
+      {
+        "key": "reliable",
+        "text": "Turn visual assessment into structured, measurable quality information.",
+        "title": "Reliable"
+      },
+      {
+        "key": "sustainable",
+        "text": "Support more efficient agricultural operations through smarter technology and better data.",
+        "title": "Sustainable"
+      },
+      {
+        "key": "data",
+        "text": "Convert visual quality information into clear percentages and measurable insights.",
+        "title": "Data-Driven"
+      }
+    ],
+    "operations": [
+      {
+        "alt": "Crates arriving at the intake shed of a Kashmir cold store",
+        "img": "images/photos/ml-intake-shed.jpg",
+        "text": "Help teams assess sampled apple lots quickly during intake.",
+        "title": "Apple Intake"
+      },
+      {
+        "alt": "A forklift moving wooden apple bins between full stacks in cold storage",
+        "img": "images/photos/ml-bin-stacks.jpg",
+        "text": "Support quality assessment when storage facilities are handling high volumes.",
+        "title": "Peak Season"
+      },
+      {
+        "alt": "A worker checking apples in a red crate",
+        "img": "images/photos/ml-inspection.jpg",
+        "text": "Give teams a standardized AI-assisted assessment approach.",
+        "title": "Consistent Assessment"
+      },
+      {
+        "alt": "Rows of sampled apple crates on pallets, seen from above",
+        "img": "images/photos/ml-crate-rows.jpg",
+        "text": "Turn quality assessment into measurable information that can be documented and communicated.",
+        "title": "Better Data"
+      }
+    ]
+  }
+}

@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Malus Lens — Apple Quality. Assessed in Seconds.</title>
+  <meta name="description" content="Malus Lens uses AI-powered computer vision to help apple businesses assess quality faster, more consistently and with data-driven insights." />
+  <meta name="theme-color" content="#FFFFFF" />
+  <link rel="icon" type="image/png" href="images/brand/favicon-64.png" />
+  <link rel="apple-touch-icon" href="images/brand/apple-touch-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Malus Lens" />
+  <meta property="og:title" content="Malus Lens — Apple Quality. Assessed in Seconds." />
+  <meta property="og:description" content="AI-powered computer vision for faster, more consistent apple quality assessment." />
+  <meta property="og:url" content="https://malus-lens.vercel.app/" />
+  <meta property="og:image" content="https://malus-lens.vercel.app/images/brand/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css?v=62" />
+  <link rel="stylesheet" href="css/v2.css?v=60" />
+  <link rel="stylesheet" href="css/extras.css?v=63" />
+  <script>
+    (function () { var q = location.search, h = document.documentElement;
+      /* ?motion=1 forces full animation even when the OS asks for reduced motion (demo/testing) */
+      if (/[?&]motion=1/.test(q)) h.classList.add('force-motion');
+      /* saved site edits load before first paint (only waits when none are cached yet) */
+      try { if (!localStorage.getItem('ml_site_cache_v1') || /[?&]edit=1/.test(q)) h.classList.add('cms-wait'); } catch (e) {}
+    })();
+  </script>
+
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+    } }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- The 3D apple renders only inside the hero slot (js/apple3d.js moves this canvas there) -->
+  <canvas id="apple-canvas" aria-hidden="true"></canvas>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a class="nav__logo" href="#top" aria-label="Malus Lens home">
+        <img src="images/brand/malus-lens-logo.png" alt="Malus Lens" width="1535" height="504" />
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#product">Product</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#accuracy">Accuracy</a>
+        <a href="#vision">Vision</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <a class="btn btn--ghost btn--sm" data-app-link data-track="nav_use_app" href="#">Use Malus Lens</a>
+        <button class="btn btn--primary btn--sm" data-book data-track="nav_book_meeting">Book a Meeting</button>
+      </div>
+      <button class="nav__toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <nav aria-label="Mobile">
+        <a href="#product">Product</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#accuracy">Accuracy</a>
+        <a href="#vision">Vision</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="mobile-menu__cta">
+        <button class="btn btn--primary btn--lg btn--block" data-book data-track="nav_book_meeting">Book a Meeting</button>
+        <a class="btn btn--ghost btn--lg btn--block" data-app-link data-track="nav_use_app" href="#">Use Malus Lens</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO — framed stage (refs: NutriVa frame + Aether horizon) -->
+    <section class="hero" id="top">
+      <div class="stage">
+        <div class="stage__sky" aria-hidden="true"></div>
+        <div class="stage__horizon" aria-hidden="true"></div>
+        <div class="stage__top">
+          <span class="stage__tag" data-e="top.span"><span class="dot"></span>AI-powered apple quality assessment</span>
+          <span class="stage__tag stage__tag--plain" data-e="top.span2">Made for Kashmir's cold stores</span>
+        </div>
+        <div class="stage__grid">
+          <div class="stage__left">
+            <h1 class="hero__title" data-split data-e="top.h1">Apple Quality. <em class="serif">Assessed in seconds.</em></h1>
+            <p class="hero__lead" data-reveal style="--d:.5s" data-e="top.p">AI-powered computer vision that makes apple quality assessment faster, more consistent and data-driven.</p>
+            <div class="hero__ctas" data-reveal style="--d:.65s">
+              <button class="btn btn--primary btn--lg" data-book data-track="hero_book_meeting">Book a Meeting <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              <a class="btn btn--ghost btn--lg" data-app-link data-track="hero_use_app" href="#">Use Malus Lens</a>
+            </div>
+          </div>
+
+          <div class="stage__center">
+            <div class="apple-slot apple-slot--hero" data-apple-slot="hero" data-mode="hero">
+              <img class="apple-fallback" src="images/brand/malus-lens-icon.png" alt="" />
+            </div>
+            <span class="chip chip--1" data-e="top.span3"><i><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></i>Counts every apple</span>
+            <span class="chip chip--2" data-e="top.span4"><i><svg viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></svg></i>Grades A / B</span>
+            <span class="chip chip--4" data-e="top.span6"><i><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg></i>Report in one tap</span>
+            <p class="drag-hint" aria-hidden="true" data-e="top.p2">Drag the apple to rotate</p>
+          </div>
+
+          <div class="stage__right">
+            <article class="live-card" data-reveal style="--d:.4s" aria-label="Illustrative assessment preview">
+              <header><span class="rec"></span>Malus Lens · Assessment<span class="live-card__tag">Sample</span></header>
+              <div class="live-card__row"><span>Grade A</span><i><i style="--w:68%"></i></i><b>68%</b></div>
+              <div class="live-card__row live-card__row--b"><span>Grade B</span><i><i style="--w:32%"></i></i><b>32%</b></div>
+              <footer><span>Photos <b>5</b></span><span>Status <b class="ok">Done</b></span></footer>
+            </article>
+            <article class="info-card" data-reveal style="--d:.55s">
+              <img src="images/photos/ml-intake-yard.jpg" alt="Crates of apples being received at a Kashmir cold-store intake yard" loading="lazy" data-ei="top.img" />
+              <div><small data-e="top.small">Built for the intake floor</small><p data-e="top.p3">For cold-storage teams who need quality data while the trucks are still at the gate.</p></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <div class="strip" aria-label="Brand values">
+      <div class="strip__track">
+        <ul>
+          <li data-e="top.li">Fast</li><li data-e="top.li2">Precise</li><li data-e="top.li3">Reliable</li><li data-e="top.li4">Sustainable</li><li data-e="top.li5">Data-Driven</li>
+          <li aria-hidden="true">Fast</li><li aria-hidden="true">Precise</li><li aria-hidden="true">Reliable</li><li aria-hidden="true">Sustainable</li><li aria-hidden="true">Data-Driven</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PROBLEM -->
+    <section class="section problem" id="problem" aria-labelledby="problem-h">
+      <div class="container problem__grid">
+        <div class="problem__copy">
+          <p class="label" data-reveal data-e="problem.p">01 / The problem</p>
+          <h2 id="problem-h" data-reveal data-e="problem.h2">Quality assessment shouldn't <em class="serif">slow down</em> intake.</h2>
+          <p class="lead" data-reveal data-e="problem.p2">During high-volume intake, manually assessing quality can become time-consuming and inconsistent. Malus Lens is designed to help businesses make this process faster and more data-driven.</p>
+          <ol class="pressure">
+            <li data-reveal><h3 data-e="problem.h3">Large volumes, all at once</h3><p data-e="problem.p3">Crates arrive together, and every lot needs a decision.</p></li>
+            <li data-reveal><h3 data-e="problem.h32">Time-sensitive decisions</h3><p data-e="problem.p4">Fruit has to be assessed before it goes into storage.</p></li>
+            <li data-reveal><h3 data-e="problem.h33">Manual inspection</h3><p data-e="problem.p5">Quality is judged by eye, a handful of apples at a time.</p></li>
+            <li data-reveal><h3 data-e="problem.h34">Variation between assessors</h3><p data-e="problem.p6">Two people can read the same lot differently.</p></li>
+            <li data-reveal><h3 data-e="problem.h35">Peak-season workload</h3><p data-e="problem.p7">Pressure is highest exactly when there's least time.</p></li>
+          </ol>
+        </div>
+        <div class="problem__media">
+          <figure class="ph ph--a" data-parallax="-0.06"><img src="images/photos/ml-unloading.jpg" alt="Workers unloading crates of apples onto pallets at cold-store intake" loading="lazy" width="1600" height="900" data-ei="problem.img" /></figure>
+          <figure class="ph ph--b" data-parallax="0.05"><img src="images/photos/ml-apple-bin.jpg" alt="Freshly received apples in a wooden bin at a Kashmir cold store" loading="lazy" width="1200" height="1600" data-ei="problem.img2" /></figure>
+          <figure class="ph ph--c" data-parallax="-0.03"><img src="images/photos/ml-crate-closeup.jpg" alt="A crate of apples being opened for inspection at intake" loading="lazy" width="1600" height="900" data-ei="problem.img3" /></figure>
+          <p class="ph__cap" data-e="problem.p8">Apple intake &amp; cold storage, Kashmir</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="section solution" id="solution" aria-labelledby="solution-h">
+      <div class="container solution__grid">
+        <div class="solution__visual">
+          <div class="apple-slot apple-slot--scan" data-apple-slot="scan" data-mode="scan">
+            <img class="apple-fallback" src="images/brand/malus-lens-icon.png" alt="" />
+          </div>
+          <div class="scan-readout" aria-hidden="true">
+            <span>Assessing sample</span><b id="scan-pct">0%</b>
+            <i class="scan-bar"><i id="scan-fill"></i></i>
+          </div>
+        </div>
+        <div class="solution__copy">
+          <p class="label" data-reveal data-e="solution.p">02 / The solution</p>
+          <h2 id="solution-h" data-reveal data-e="solution.h2">Meet <em class="serif">Malus Lens.</em></h2>
+          <p class="lead" data-reveal data-e="solution.p2">Malus Lens uses AI-powered computer vision to assess apple quality from images, helping businesses obtain fast, consistent and measurable quality insights.</p>
+          <ol class="flow" data-reveal>
+            <li><span class="flow__n">01</span><h3 data-e="solution.h3">Capture</h3><p data-e="solution.p3">Photograph sampled apples.</p></li>
+            <li><span class="flow__n">02</span><h3 data-e="solution.h32">AI assessment</h3><p data-e="solution.p4">Computer vision identifies and classifies each apple.</p></li>
+            <li><span class="flow__n">03</span><h3 data-e="solution.h33">Quality data</h3><p data-e="solution.p5">Clear, measurable results your team can act on.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="section benefits" id="benefits" aria-labelledby="benefits-h">
+      <div class="container">
+        <div class="section-head">
+          <p class="label" data-reveal data-e="benefits.p">03 / Benefits</p>
+          <h2 id="benefits-h" data-reveal data-e="benefits.h2">Built for faster, <em class="serif">smarter</em> intake operations.</h2>
+        </div>
+        <div class="benefits__grid" id="benefits-grid"></div>
+        <div class="inline-cta" data-reveal>
+          <p data-e="benefits.p2">Want to see it on your own fruit?</p>
+          <button class="btn btn--primary" data-book data-track="benefits_book_meeting">Book a Meeting</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPERATIONS -->
+    <section class="section ops" id="operations" aria-labelledby="ops-h">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <p class="label" data-reveal data-e="operations.p">04 / Operations</p>
+            <h2 id="ops-h" data-reveal data-e="operations.h2">Designed around <em class="serif">real</em> apple operations.</h2>
+          </div>
+          <p class="lead" data-reveal data-e="operations.p2">Malus Lens is being developed with Kashmir's apple industry and cold-storage ecosystem in mind — for operations anywhere apples are received, assessed and stored.</p>
+        </div>
+        <div class="ops__grid" id="ops-grid"></div>
+      </div>
+    </section>
+
+    <!-- PERFORMANCE -->
+    <section class="section perf section--dark" id="accuracy" aria-labelledby="perf-h">
+      <div class="container perf__grid">
+        <div class="perf__copy">
+          <p class="label" data-reveal data-e="accuracy.p">05 / Performance</p>
+          <h2 id="perf-h" data-reveal data-e="accuracy.h2">Built around <em class="serif">measurable</em> performance.</h2>
+          <h3 class="perf__sub" data-reveal data-e="accuracy.h3">From image to insight.</h3>
+          <p class="lead" data-reveal data-e="accuracy.p2">Malus Lens combines computer vision and machine learning to identify and classify apples from captured images, turning visual inspection into structured quality data.</p>
+          <div class="metrics" id="metrics"></div>
+        </div>
+        <div class="detect" id="detect" data-reveal>
+          <span class="tag">Malus Lens output</span>
+          <div class="detect__frame">
+            <img src="images/photos/ml-tray-output.jpg" alt="A tray of 102 apples photographed at intake, with Malus Lens detection boxes marking Grade A and Grade B apples" loading="lazy" width="1035" height="1521" />
+            <div class="detect__boxes" id="detect-boxes"></div>
+            <div class="detect__sweep"></div>
+          </div>
+          <div class="detect__bar" aria-live="off">
+            <div><small data-e="accuracy.small">Detected</small><b id="det-count">0</b></div>
+            <div><small data-e="accuracy.small2"><i class="sw sw--a"></i>Grade A</small><b id="det-a">0</b></div>
+            <div><small data-e="accuracy.small3"><i class="sw sw--b"></i>Grade B</small><b id="det-b">0</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT SHOWCASE -->
+    <section class="section showcase" id="product" aria-labelledby="product-h">
+      <div class="container">
+        <div class="section-head">
+          <p class="label" data-reveal data-e="product.p">06 / Product</p>
+          <h2 id="product-h" data-reveal data-e="product.h2">See Malus Lens <em class="serif">in action.</em></h2>
+        </div>
+        <div class="showcase__grid">
+          <div class="steps" role="tablist" aria-label="Product screens">
+            <button class="step is-active" role="tab" aria-selected="true" aria-controls="screen-0" id="tab-0" data-step="0">
+              <span class="step__n">01</span><span class="step__t"><b>New analysis</b><small data-e="product.small">Start an assessment in a tap.</small></span><i class="step__bar"><i></i></i>
+            </button>
+            <button class="step" role="tab" aria-selected="false" aria-controls="screen-1" id="tab-1" data-step="1" tabindex="-1">
+              <span class="step__n">02</span><span class="step__t"><b>Capture</b><small data-e="product.small2">Photograph the sample on a phone.</small></span><i class="step__bar"><i></i></i>
+            </button>
+            <button class="step" role="tab" aria-selected="false" aria-controls="screen-2" id="tab-2" data-step="2" tabindex="-1">
+              <span class="step__n">03</span><span class="step__t"><b>Results</b><small data-e="product.small3">Counts, grade percentages and weights.</small></span><i class="step__bar"><i></i></i>
+            </button>
+            <button class="step" role="tab" aria-selected="false" aria-controls="screen-3" id="tab-3" data-step="3" tabindex="-1">
+              <span class="step__n">04</span><span class="step__t"><b>Report</b><small data-e="product.small4">A professional PDF to share.</small></span><i class="step__bar"><i></i></i>
+            </button>
+          </div>
+
+          <div class="stage">
+            <span class="tag tag--stage">Mockup · sample data</span>
+            <div class="phone">
+              <div class="phone__notch"></div>
+              <div class="phone__screen">
+                <!-- 0 New analysis -->
+                <div class="scr is-active" id="screen-0" role="tabpanel" aria-labelledby="tab-0">
+                  <div class="app-top"><img src="images/brand/malus-lens-icon.png" alt="" /><b>Malus Lens</b><span class="av">ML</span></div>
+                  <p class="app-hi">Good morning</p>
+                  <h4 class="app-h">Ready for intake</h4>
+                  <div class="app-new"><span>+</span><div><b>New analysis</b><small>Assess a sampled lot</small></div></div>
+                  <p class="app-sub">Recent</p>
+                  <ul class="app-list">
+                    <li><i></i><div><b>Lot —</b><small>Sample analysis</small></div><em>Done</em></li>
+                    <li><i></i><div><b>Lot —</b><small>Sample analysis</small></div><em>Done</em></li>
+                    <li><i></i><div><b>Lot —</b><small>Sample analysis</small></div><em>Done</em></li>
+                  </ul>
+                </div>
+                <!-- 1 Capture -->
+                <div class="scr scr--cam" id="screen-1" role="tabpanel" aria-labelledby="tab-1" hidden>
+                  <img src="images/photos/ml-tray-output.jpg" alt="" loading="lazy" />
+                  <div class="cam-ui">
+                    <span class="cam-chip">Photo 2 of 5</span>
+                    <div class="cam-vf"><i></i><i></i><i></i><i></i></div>
+                    <div class="cam-bottom"><span class="cam-thumb"></span><span class="cam-shutter"></span><span class="cam-x"></span></div>
+                  </div>
+                </div>
+                <!-- 2 Results -->
+                <div class="scr" id="screen-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+                  <div class="app-top"><span class="back">‹</span><b>Results</b><span></span></div>
+                  <div class="res-hero"><small>Apples detected</small><b data-sample>0</b></div>
+                  <div class="res-bars">
+                    <div class="rb"><span>Grade A</span><i><i style="--w:68%"></i></i><b>68%</b></div>
+                    <div class="rb"><span>Grade B</span><i><i style="--w:24%"></i></i><b>24%</b></div>
+                    <div class="rb"><span>Grade C</span><i><i style="--w:8%"></i></i><b>8%</b></div>
+                  </div>
+                  <div class="res-cards"><div><small>Est. weight</small><b>— kg</b></div><div><small>Photos</small><b>5</b></div></div>
+                  <span class="res-btn">Generate report</span>
+                </div>
+                <!-- 3 Report -->
+                <div class="scr scr--doc" id="screen-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+                  <div class="doc">
+                    <div class="doc__head"><img src="images/brand/malus-lens-logo.png" alt="" /><span>Quality report</span></div>
+                    <div class="doc__meta"><span>Lot —</span><span>Date —</span></div>
+                    <div class="doc__chart"><i style="--h:68%"></i><i style="--h:24%"></i><i style="--h:8%"></i></div>
+                    <div class="doc__rows"><i></i><i></i><i></i><i></i><i></i></div>
+                    <div class="doc__foot">Generated by Malus Lens</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section class="section why" id="why" aria-labelledby="why-h">
+      <div class="container">
+        <div class="section-head">
+          <p class="label" data-reveal data-e="why.p">07 / Why Malus Lens</p>
+          <h2 id="why-h" data-reveal data-e="why.h2">Technology built for the realities of the apple industry.</h2>
+        </div>
+        <div class="why__grid" id="why-grid"></div>
+        <p class="why__tags" data-reveal data-e="why.p2"><span>Practical.</span> <span>Focused.</span> <span>Simple.</span> <span>Data-driven.</span></p>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section voices" id="feedback" aria-labelledby="voices-h">
+      <div class="container">
+        <div class="section-head">
+          <p class="label" data-reveal data-e="feedback.p">08 / Customer feedback</p>
+          <h2 id="voices-h" data-reveal data-e="feedback.h2">Built for the people closest to the operation.</h2>
+        </div>
+        <div class="voices__grid" id="voices-grid"></div>
+      </div>
+    </section>
+
+    <!-- VISION -->
+    <section class="section vision" id="vision" aria-labelledby="vision-h">
+      <div class="container vision__grid">
+        <div class="vision__copy">
+          <p class="label" data-reveal data-e="vision.p">09 / Vision</p>
+          <h2 id="vision-h" data-reveal data-e="vision.h2">Building <em class="serif">smarter</em> agricultural operations.</h2>
+          <p class="vision__statement" id="vision-text" data-e="vision.statement">We believe the future of agriculture will be increasingly powered by intelligent technology and better data. Malus Lens is starting with apple quality assessment — building practical AI tools that help agricultural businesses make faster, more informed decisions.</p>
+          <ul class="ideals" data-reveal>
+            <li data-e="vision.li">Practical AI</li><li data-e="vision.li2">Agricultural innovation</li><li data-e="vision.li3">Efficiency</li><li data-e="vision.li4">Better decisions</li><li data-e="vision.li5">Accessible technology</li><li data-e="vision.li6">Data-driven operations</li>
+          </ul>
+          <p class="vision__close" data-reveal data-e="vision.p2">Starting with apples. <span>Building for smarter agricultural operations.</span></p>
+        </div>
+        <div class="vision__visual">
+          <div class="apple-slot apple-slot--spin" data-apple-slot="spin" data-mode="spin">
+            <img class="apple-fallback" src="images/brand/malus-lens-icon.png" alt="" />
+          </div>
+          <div class="orbit" aria-hidden="true"><i></i><i></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOK -->
+    <section class="section book" id="book" aria-labelledby="book-h">
+      <div class="container">
+        <div class="book__card" data-reveal>
+          <div class="book__copy">
+            <p class="label label--light" data-e="book.p">Book a meeting</p>
+            <h2 id="book-h" data-e="book.h2">See what Malus Lens can do for your operation.</h2>
+            <p data-e="book.p2">Talk to the Malus Lens team about your operation, see the product in action, and explore how AI-powered quality assessment can fit into your workflow.</p>
+            <div class="book__ctas">
+              <button class="btn btn--primary btn--lg" data-book data-track="final_book_meeting">Book a Meeting</button>
+            </div>
+          </div>
+          <div class="book__visual">
+            <div class="apple-slot apple-slot--cta" data-apple-slot="cta" data-mode="cta">
+              <img class="apple-fallback" src="images/brand/malus-lens-icon.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact" aria-labelledby="contact-h">
+      <div class="container contact__grid">
+        <div>
+          <p class="label" data-reveal data-e="contact.p">Contact</p>
+          <h2 id="contact-h" data-reveal data-e="contact.h2">Let's <em class="serif">talk.</em></h2>
+          <p class="lead" data-reveal data-e="contact.p2">Questions about Malus Lens or your operation? Reach the team directly.</p>
+        </div>
+        <ul class="contact__list" id="contact-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <img src="images/brand/malus-lens-logo.png" alt="Malus Lens" width="1535" height="504" loading="lazy" />
+      </div>
+      <nav aria-label="Footer">
+        <h3 data-e="footer.h3">Explore</h3>
+        <a href="#product">Product</a><a href="#benefits">Benefits</a><a href="#accuracy">Accuracy</a><a href="#vision">Vision</a><a href="#contact">Contact</a>
+      </nav>
+      <div>
+        <h3 data-e="footer.h32">Get started</h3>
+        <button class="linklike" data-book data-track="footer_book_meeting">Book a Meeting</button>
+        <a data-app-link data-track="footer_use_app" href="#">Use Malus Lens</a>
+      </div>
+      <div id="footer-legal"></div>
+    </div>
+    <div class="container footer__base">
+      <p data-e="footer.p">© <span id="year"></span> Malus Lens. All rights reserved.</p>
+      <p data-e="footer.p2">Fast · Precise · Reliable · Sustainable · Data-Driven</p>
+    </div>
+  </footer>
+
+  <!-- Booking dialog -->
+  <dialog class="booking" id="booking" aria-labelledby="booking-h">
+    <div class="booking__head">
+      <h2 id="booking-h">Book a meeting</h2>
+      <button class="booking__close" id="booking-close" aria-label="Close">✕</button>
+    </div>
+    <div class="booking__body" id="booking-body"></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/config.js?v=64"></script>
+  <script src="js/cms.js?v=62" defer></script>
+  <script src="js/main.js?v=63" defer></script>
+  <script type="module" src="js/apple3d.js?v=62"></script>
+</body>
+</html>
