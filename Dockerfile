@@ -1,45 +1,20 @@
 FROM nginx:stable-alpine
 
-# Default port; Cloud Run will set PORT if needed
+# Cloud Run sets PORT at runtime; default to 8080 for local builds
 ENV PORT 8080
 
-# Create an entrypoint script that writes nginx config using the runtime $PORT
-RUN cat > /entrypoint.sh <<'SH'
-#!/bin/sh
-# Generate nginx config using runtime $PORT
-cat > /etc/nginx/conf.d/default.conf <<'EOF'
-server {
-    listen ${PORT};
-    server_name _;
+# Install envsubst (gettext) so we can substitute $PORT into the nginx conf
+RUN apk add --no-cache gettext
 
-    root /usr/share/nginx/html;
-    index index.html;
+# Copy templated nginx config and an entrypoint that substitutes $PORT
+COPY nginx.conf.template /etc/nginx/templates/default.conf.template
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
-    location / {
-        try_files \$uri \$uri/ /index.html;
-    }
-
-    location ~* \.(?:css|js|jpg|jpeg|gif|png|svg|ico|woff2?|ttf|eot)$ {
-        expires 30d;
-        add_header Cache-Control "public, immutable";
-    }
-
-    error_page 404 /index.html;
-
-    gzip on;
-    gzip_min_length 1000;
-    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
-}
-EOF
-
-exec nginx -g 'daemon off;'
-SH
-
-RUN chmod +x /entrypoint.sh
-
-# Copy site files into nginx html dir
+# Copy site files into nginx html dir (templates/entrypoint are excluded by .dockerignore)
 COPY . /usr/share/nginx/html
 
 EXPOSE 8080
 
-CMD ["/entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+CMD ["nginx", "-g", "daemon off;"]

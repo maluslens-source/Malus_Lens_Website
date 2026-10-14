@@ -1,0 +1,9 @@
+.git
+.gitignore
+Dockerfile
+Dockerfile.*
+node_modules
+*.md
+.vscode
+nginx.conf.template
+docker-entrypoint.sh
