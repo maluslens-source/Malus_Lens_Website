@@ -9,7 +9,7 @@ window.MALUS_CONFIG = {
   // to hide anything that has not been supplied/approved.
   showPlaceholders: true,
 
-  appUrl: 'https://login-web-159995603236.us-central1.run.app/',        // [APPLICATION URL]  e.g. https://app.maluslens.com
+  appUrl: 'app.maluslens.com',        // [APPLICATION URL]  e.g. https://app.maluslens.com
   bookingUrl: '',    // [BOOKING URL]      e.g. https://calendly.com/maluslens/meeting
   demoUrl: '',       // optional separate demo link — falls back to bookingUrl
 
