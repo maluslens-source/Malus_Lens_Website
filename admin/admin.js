@@ -2,11 +2,13 @@
  * Malus Lens — website admin.
  * Edits are kept as a draft (sessionStorage) and shown live in the preview iframe;
  * "Publish" saves them to Supabase (ml_site_content) through the ml-admin edge function.
+ * const SB_URL = 'https://hqatexqeufohkisimqvq.supabase.co';
+ * const SB_KEY = 'sb_publishable_HMxbfqiTG7fYKWfajXwW3Q_xtoJiPBR';
  */
 (() => {
   'use strict';
-  const SB_URL = 'https://hqatexqeufohkisimqvq.supabase.co';
-  const SB_KEY = 'sb_publishable_HMxbfqiTG7fYKWfajXwW3Q_xtoJiPBR';
+   const SB_URL = 'https://vrwmhjyzxizyvjpjmdyr.supabase.co';
+  const SB_KEY = 'sb_publishable_8xyEnG6lqHkDQK3CAbruIg_5QUHn9ic;
   const FN = `${SB_URL}/functions/v1/ml-admin`;
   const DRAFT = 'ml_draft', SESSION = 'ml_admin';
   const $ = (s, r = document) => r.querySelector(s);
