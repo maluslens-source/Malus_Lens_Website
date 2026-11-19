@@ -4,10 +4,12 @@
  * before main.js renders: text blocks [data-e], photos [data-ei], config (contact,
  * figures, testimonials …) and the card lists in MALUS_CONTENT.
  * Inside the admin preview (?edit=1 in an iframe) it also turns on click-to-edit.
+ * const SB_URL = 'https://hqatexqeufohkisimqvq.supabase.co';
+ * const SB_KEY = 'sb_publishable_HMxbfqiTG7fYKWfajXwW3Q_xtoJiPBR';
  */
 (() => {
-  const SB_URL = 'https://hqatexqeufohkisimqvq.supabase.co';
-  const SB_KEY = 'sb_publishable_HMxbfqiTG7fYKWfajXwW3Q_xtoJiPBR';
+  const SB_URL = 'https://vrwmhjyzxizyvjpjmdyr.supabase.co';
+  const SB_KEY = 'sb_publishable_8xyEnG6lqHkDQK3CAbruIg_5QUHn9ic;
   const CACHE = 'ml_site_cache_v1', DRAFT = 'ml_draft';
   const root = document.documentElement;
   const EDIT = /[?&]edit=1/.test(location.search) && window.parent !== window;
