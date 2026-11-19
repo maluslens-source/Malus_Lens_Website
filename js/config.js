@@ -30,9 +30,9 @@ window.MALUS_CONFIG = {
 
   // Real, approved testimonials only: { quote, name, role, organisation, photo }
   testimonials: [
-    { quote: 'During peak season our intake team was judging lots by eye, and two people could read the same crate differently. With Malus Lens every sample is held to the same standard, and the report is ready before the truck leaves the gate.', name: 'Asif Jehangir Reshi', role: '', organisation: 'Shaheen Agro Pvt. Ltd.', photo: '' },
-    { quote: 'Quality used to be a debate at the gate. Now it is a clear number. Growers see the same Grade A and Grade B split that we see, and that makes every conversation simpler and fairer.', name: 'Nadeem Parra', role: '', organisation: 'Orchard Fresh Cold Chain Pvt. Ltd.', photo: '' },
-    { quote: 'It is built for how Kashmir’s cold stores actually work: one photo per crate, straight from a phone. Our floor staff picked it up quickly, and we now have consistent quality data for every lot we receive.', name: 'Mohsin Mir', role: '', organisation: 'Fruitmont Pvt. Ltd.', photo: '' },
+    { quote: 'Malus Lens has made the apple inspection process much easier for us. The reports are generated quickly and it helps us get a clearer picture of the quality of apples coming into our storage.', name: 'Asif Jehangir Reshi', role: '', organisation: 'Shaheen Agro Pvt. Ltd.', photo: '' },
+    { quote: 'Earlier, checking the quality of incoming apples used to take considerable time. With Malus Lens, the process is much quicker and more organised. It is a useful addition to our operations.', name: 'Nadeem Parra', role: '', organisation: 'Orchard Fresh Cold Chain Pvt. Ltd.', photo: '' },
+    { quote: 'What I liked about Malus Lens is that it provides a quick assessment along with a proper report. It has potential to make quality checking more systematic for cold-storage operators.', name: 'Mohsin Mir', role: '', organisation: 'Fruitmont Pvt. Ltd.', photo: '' },
   ],
 };
 
