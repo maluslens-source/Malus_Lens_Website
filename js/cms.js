@@ -9,7 +9,7 @@
  */
 (() => {
   const SB_URL = 'https://vrwmhjyzxizyvjpjmdyr.supabase.co';
-  const SB_KEY = 'sb_publishable_8xyEnG6lqHkDQK3CAbruIg_5QUHn9ic;
+  const SB_KEY = 'sb_publishable_8xyEnG6lqHkDQK3CAbruIg_5QUHn9ic';
   const CACHE = 'ml_site_cache_v1', DRAFT = 'ml_draft';
   const root = document.documentElement;
   const EDIT = /[?&]edit=1/.test(location.search) && window.parent !== window;
